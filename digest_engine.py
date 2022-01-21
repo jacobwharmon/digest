@@ -19,4 +19,3 @@ if __name__ == '__main__':
 
     # SEND DIGEST
     send_email(pdf_clean)
-    
