@@ -24,7 +24,7 @@ def gather_headlines():
     return headlines_clean
 
 def gather_series():
-    """[summary]
+    """Gets downloaded series from the data directory
 
     Returns:
         [type]: [description]
