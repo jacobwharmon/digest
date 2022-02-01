@@ -8,6 +8,7 @@ def gather_quote():
     Returns:
         quote_clean: a single string containing the quote and author
     """
+    
     api = "https://api.quotable.io/random"
     quote_json = requests.get(api).json()
     quote_clean = f"{quote_json['content']} --{quote_json['author']}"
