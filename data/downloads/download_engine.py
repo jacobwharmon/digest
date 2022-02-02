@@ -8,4 +8,4 @@ sys.path.append('dir_path')
 from construction import *
 
 if __name__ == '__main__':
-    down_construction()
+    down_construction(historic=False)
