@@ -1,4 +1,5 @@
 import urllib.request
+import os
 
 current_url = "https://www.census.gov/construction/c30/xls/totsa.xls"
 construction_path = "data/raw/construction"
@@ -25,10 +26,8 @@ def down_construction(historic=False):
         historic (bool, optional): Determines if we need to collect historic datasets as well. Defaults to False.
     """
     if historic:
-        # Download historic and current
-        # HTTP 429 Too many requests error 
-        # Needs to not repeat old downloads. for file in dir, ignore
-        [urllib.request.urlretrieve(hist_url, f"{construction_path}/{hist_name}") for hist_name, hist_url in historic_dict.items()]
+        # Downloads historic datasets if not already downloaded
+        [urllib.request.urlretrieve(hist_url, f"{construction_path}/{hist_name}") for hist_name, hist_url in historic_dict.items() if hist_name not in os.listdir(construction_path)]
         urllib.request.urlretrieve(current_url, f"{construction_path}/totsa.xls")
     else:
         # Download current
