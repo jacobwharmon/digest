@@ -9,3 +9,5 @@ from down_construction import *
 
 if __name__ == '__main__':
     down_construction()
+    # down_indexes()
+    # down_housing_indexes()
